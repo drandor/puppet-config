@@ -4,12 +4,21 @@
 # vim: set expandtab:
 #
 
-import live/*.pp
+import "test/*.pp"
+
+## 
+# The default node
+##
+node default {
+}
 
 ##
 # A default node
 ##
 node default_node inherits default {
+
+   class {"apt::fs": stage => "file"}
+   class {"apt::run::update": stage => "prepackage"}
 
 }
 
