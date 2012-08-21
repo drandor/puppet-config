@@ -3,6 +3,8 @@
 # vim: set expandtab:
 #
 
-node /puppetc01/ inherits default_node {
+node "puppetc01.localdomain" inherits default_node {
+   
+   class {"frontend": }
 
 }
