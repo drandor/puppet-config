@@ -5,6 +5,8 @@
 
 node "puppetc01.localdomain" inherits default_node {
    
+   $httpd_server_class = "apache"
+
    include web_portal
 
 }
