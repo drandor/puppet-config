@@ -7,8 +7,12 @@ class web_portal {
 
    class {
       "apache::server":             stage => "main";
+
+      "middleware":                 stage => "main";
       "frontend":                   stage => "main";
+
       "web_portal::configuration":  stage => "configuration";
+
       "apache::service":            stage => "service";
    }
 

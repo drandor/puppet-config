@@ -5,12 +5,14 @@
 
 class web_portal::configuration {
 
-   apache::server::vhost{ "simple": }
+   apache::server::vhost{ "frontend": }
+   apache::server::vhost{ "middleware": }
 
-   apache::server::configuration{ "simple":
+   apache::server::configuration{ "portal":
       conf => {
          "keep_alive_timeout" => 15,
       }
    }
+
 
 }
