@@ -54,6 +54,9 @@ node default_node inherits default {
 #  - do package installations
 #  - ...
 #
+### PostPackages (name: postpackage)
+# Create needed directory structures 
+#
 ## PostPackages / PreServices / Configuration (name: configuration)
 # Manage configuration files of daemons, ...
 #  - configure services/daemons
@@ -88,7 +91,8 @@ stage { "bootstrap": before => Stage['file']}
 stage { "file": require => Stage['bootstrap']}
 stage { "prepackage": require => Stage['file']}
 ### default: stage { "main": require => Stage['prepackage'] }
-stage { "configuration": require => Stage['main']}
+stage { "postpackage": require => Stage['main']}
+stage { "configuration": require => Stage['postpackage']}
 stage { "service": require => Stage['configuration']}
 stage { "postservice": require => Stage['service']}
 stage { "preapp": require => Stage['postservice']}
