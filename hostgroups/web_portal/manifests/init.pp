@@ -7,9 +7,11 @@ class web_portal {
 
    class {
       "apache::server":             stage => "main";
+      "dovecot::server":            stage => "main";
 
       "middleware":                 stage => "main";
       "frontend":                   stage => "main";
+      "groupware":                  stage => "main";
 
       "web_portal::configuration":  stage => "configuration";
 

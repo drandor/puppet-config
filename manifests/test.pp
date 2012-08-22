@@ -17,6 +17,8 @@ node default {
 ##
 node default_node inherits default {
 
+   include globals
+
    class {"apt::fs": stage => "file"}
    class {"apt::run::update": stage => "prepackage"}
 
