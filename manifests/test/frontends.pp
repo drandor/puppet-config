@@ -5,6 +5,6 @@
 
 node "puppetc01.localdomain" inherits default_node {
    
-   include frontend
+   include web_portal
 
 }
